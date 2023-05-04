@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "2e6f7e69-570b-4b6d-9320-1211913f8335",
+		"name": "ADMISION-UNFV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1509467"
+	},
+	"item": [
+		{
+			"name": "https://web4.unfv.edu.pe/Resultado_Admision/2023/pregrado_general/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "__EVENTTARGET",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "__EVENTARGUMENT",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "__VIEWSTATE",
+							"value": "/wEPDwUJMTQ4NjQ3MzI0D2QWAgIDD2QWEAIBDw8WAh4EVGV4dAUJQURNSVNJw5NOZGQCAw8PFgIfAAUOQURNSVNJw5NOIDIwMjNkZAIFDw8WAh8ABSFFWEFNRU4gT1JESU5BUklPIFkgRVhUUkFPUkRJTkFSSU9kZAIHDw8WAh8ABQlBRE1JU0nDk05kZAITDw8WAh8ABQpSZXN1bHRhZG9zZGQCIQ88KwARAgEQFgAWABYADBQrAABkAiMPD2QPEBYCZgIBFgIWAh4OUGFyYW1ldGVyVmFsdWUFATEWAh8BZRYCZmZkZAIlDw8WAh8ABUVDb3B5cmlnaHQgwqkgMjAxNSAtIENFVUNJLCBEZXNhcnJvbGxvLiBUb2RvcyBsb3MgZGVyZWNob3MgcmVzZXJ2YWRvcy5kZBgBBQ9HcmRWd19SZXN1bHRhZG8PZ2TIQZeBdjV1XolUwPsiKCSf3j/xlUkUueZ85/WpkpNovQ==",
+							"type": "text"
+						},
+						{
+							"key": "__VIEWSTATEGENERATOR",
+							"value": "7E160E5E",
+							"type": "text"
+						},
+						{
+							"key": "__EVENTVALIDATION",
+							"value": "/wEdAAVB7+mvK46cQ+RALgX8Jv+qz+MbszLHVFif+/KLimSgja1JznEC6LG9gexEWD4DwaLZ7wBfF0GO/CcGfQ0dLiCskidMERSnOVJ6hsWCBbBUCvWlA5sALdauy4y2TTdeA8ikwBBI0Ws80WqXamDFl6z4",
+							"type": "text"
+						},
+						{
+							"key": "CboTipo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "Txt_Busqueda",
+							"value": "44068",
+							"type": "text"
+						},
+						{
+							"key": "Btn_Buscar",
+							"value": "Buscar",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://web4.unfv.edu.pe/Resultado_Admision/2023/pregrado_general/",
+					"protocol": "https",
+					"host": [
+						"web4",
+						"unfv",
+						"edu",
+						"pe"
+					],
+					"path": [
+						"Resultado_Admision",
+						"2023",
+						"pregrado_general",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getResultBySearchTypeAndValue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/results?searchType=CODE&searchValue=44069",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"results"
+					],
+					"query": [
+						{
+							"key": "searchType",
+							"value": "CODE"
+						},
+						{
+							"key": "searchValue",
+							"value": "44069"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getResultsBySpeciality",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"searchStarValue\": 64000,\n    \"speciality\": \"RADIOLOGÍA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/results",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getResultsBySpecialityByStartAndFinishValue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"searchStarValue\": 56000,\n    \"searchFinishValue\": 58000,\n    \"speciality\": \"MEDICINA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/results",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"results"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

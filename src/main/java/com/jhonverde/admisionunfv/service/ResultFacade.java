@@ -73,9 +73,12 @@ public class ResultFacade {
                 .filter(r -> TagResult.INGRESO.getDescription().equals(r.getCondicion()))
                 .collect(Collectors.toList());
 
-        Collections.sort(results, Comparator.comparing(ResultResponseDto::getPuntaje).reversed());
+        Comparator<ResultResponseDto> orderByScoreBySurnames = Comparator.comparing(ResultResponseDto::getPuntaje).reversed()
+                .thenComparing(ResultResponseDto::getApellidosYNombres);
 
-        AtomicInteger count =new AtomicInteger(1);
+        Collections.sort(results, orderByScoreBySurnames);
+
+        AtomicInteger count = new AtomicInteger(1);
 
         results = results.stream().map(result -> {
             result.setRanking(count.get());

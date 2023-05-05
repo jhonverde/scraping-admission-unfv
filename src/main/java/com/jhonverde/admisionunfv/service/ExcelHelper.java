@@ -21,7 +21,7 @@ import java.util.List;
 public class ExcelHelper {
 
     public String generateExcelByDataAndReturnName(ResultByFilterResponseDto responseDto) throws IOException {
-        String nombreYExtensionReporteExcel = "Resultados-" + responseDto.getCarrera() + ".xlsx";
+        String nombreYExtensionReporteExcel = responseDto.getCarrera() + ".xlsx";
         File fileReporteExcelGenerado = new File("results" + File.separator + nombreYExtensionReporteExcel);
 
         SXSSFWorkbook workbook = new SXSSFWorkbook();
